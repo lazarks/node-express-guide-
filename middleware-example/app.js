@@ -13,6 +13,7 @@ app.get(["/", "/home"], logger, (req, res) => {
 // app.use("/api", logger); -- only on /api/..
 app.use([logger, authorize]);
 app.get("/about", (req, res) => {
+    console.log(req.user);
     res.send("ABOUT");
 });
 app.get("/api/products", (req, res) => {
