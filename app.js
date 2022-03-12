@@ -1,22 +1,18 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 
-app.get(["/", "/home"], (req, res) => {
-    console.log("user hit the resource [home]");
-    res.status(200).send("Home Page");
-});
-app.get("/about", (req, res) => {
-    console.log("user hit the resource [about]");
-    res.status(200).send("About Page");
-});
+// setup static and middleware
+app.use(express.static("./public"));
+
+// app.get(["/", "/home"], (req, res) => {
+//     res.sendFile(path.resolve(__dirname, "./example/index.html"));
+// });
 
 app.all("*", (req, res) => {
-    res.status(404).send("<h1>resource not found</h1>");
+    res.status(404).send("resource not found");
 });
 
-// srv 3000
 app.listen(3000, () => {
     console.log("server is listening on port 3000");
 });
-
-// get | post | put | delete | all | use | listen |
