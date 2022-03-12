@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static("./public"));
 
 // app.get(["/", "/home"], (req, res) => {
-//     res.sendFile(path.resolve(__dirname, "./example/index.html"));
+//     res.sendFile(path.resolve(__dirname, "./template/index.html"));
 // });
 
 app.all("*", (req, res) => {
