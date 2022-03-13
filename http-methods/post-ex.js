@@ -6,11 +6,14 @@ const auth = require("./routes/auth");
 
 // static assets
 app.use(express.static("./http-methods/public"));
+
 // parse form data
 app.use(express.urlencoded({ extended: false }));
+
 // parse json
 app.use(express.json());
 
+// routes
 app.use("/api/people", people);
 app.use("/login", auth);
 
