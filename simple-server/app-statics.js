@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 
 // setup static and middleware
-app.use(express.static("./public"));
+app.use(express.static("./simple-server/public"));
 
 // app.get(["/", "/home"], (req, res) => {
 //     res.sendFile(path.resolve(__dirname, "./template/index.html"));
