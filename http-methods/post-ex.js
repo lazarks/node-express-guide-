@@ -6,6 +6,10 @@ let { people } = require("../data.js");
 app.use(express.static("./http-methods/public"));
 app.use(express.urlencoded({ extended: false }));
 
+app.get("/api/people", (req, res) => {
+    res.status(200).json({ success: true, data: people });
+});
+
 app.post("/login", (req, res) => {
     let { name } = req.body;
     if (name) {
